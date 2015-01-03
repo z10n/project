@@ -1,0 +1,37 @@
+body {
+    background-color: #5e5e5e;
+    color: #000000;
+}
+table {
+    border:solid;
+}
+a {
+    color:black;
+}
+.all {
+    width: 100%;
+
+}
+
+.btn_new {
+    background-color: buttonface;
+}
+.form_elements {
+    width:400px;
+    margin-left:0%;
+    margin-right:0%;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+

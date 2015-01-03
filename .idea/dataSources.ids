@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - @localhost" uuid="43bff0b2-fc13-4480-bd57-9c3f17505de8">
+    <database-info product="MySQL" version="5.5.39" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.34 ( Revision: jess.balint@oracle.com-20141014163213-wqbwpf1ok2kvo1om )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="spareparts"/>
+    <schema name="" catalog="testbase"/>
+    <table name="cars" schema="" catalog="spareparts" type="TABLE">
+      <column name="CAR_ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="CAR_NAME" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="CAR_ID"/>
+      <exported-key name="FK_qcarar8r169cktuae57347j4v" table="parts_cars" schema="" catalog="spareparts" columns="FK_CAR_ID"/>
+    </table>
+    <table name="categories" schema="" catalog="spareparts" type="TABLE">
+      <column name="CATEGORY_ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="CATEGORY_NAME" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="CATEGORY_ID"/>
+      <exported-key name="FK_s734qm8524tm7gn39wrb5u8kc" table="parts" schema="" catalog="spareparts" columns="FK_CATEGORY_ID"/>
+    </table>
+    <table name="part_details" schema="" catalog="spareparts" type="TABLE">
+      <column name="PART_ID" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
+      <column name="PART_NAME" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="PART_ID"/>
+    </table>
+    <table name="parts" schema="" catalog="spareparts" type="TABLE">
+      <column name="PART_ID" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
+      <column name="FK_CATEGORY_ID" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="PART_ID"/>
+      <foreign-key name="FK_s734qm8524tm7gn39wrb5u8kc" columns="FK_CATEGORY_ID" ref-table="categories" ref-schema="" ref-catalog="spareparts" ref-columns="CATEGORY_ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="FK_ow27nigmvnltu0d6nal8fb6lk" table="parts_cars" schema="" catalog="spareparts" columns="FK_PART_ID"/>
+      <index name="FK_s734qm8524tm7gn39wrb5u8kc" unique="false" columns="FK_CATEGORY_ID"/>
+    </table>
+    <table name="parts_cars" schema="" catalog="spareparts" type="TABLE">
+      <column name="FK_PART_ID" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="FK_CAR_ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="FK_PART_ID,FK_CAR_ID"/>
+      <foreign-key name="FK_ow27nigmvnltu0d6nal8fb6lk" columns="FK_PART_ID" ref-table="parts" ref-schema="" ref-catalog="spareparts" ref-columns="PART_ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_qcarar8r169cktuae57347j4v" columns="FK_CAR_ID" ref-table="cars" ref-schema="" ref-catalog="spareparts" ref-columns="CAR_ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="FK_qcarar8r169cktuae57347j4v" unique="false" columns="FK_CAR_ID"/>
+    </table>
+    <table name="users" schema="" catalog="spareparts" type="TABLE">
+      <column name="USER_ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="USER_NAME" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="USER_PASS" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="USER_ID"/>
+    </table>
+    <table name="categories" schema="" catalog="testbase" type="TABLE">
+      <column name="CATEGORY_ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="CATEGORY_NAME" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="CATEGORY_ID"/>
+    </table>
+    <table name="users" schema="" catalog="testbase" type="TABLE">
+      <column name="USER_ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="USER_NAME" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="USER_PASS" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="USER_ID"/>
+    </table>
+  </data-source>
+</component>

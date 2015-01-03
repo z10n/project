@@ -1,0 +1,79 @@
+<!--use this v.2.5 declaration in web.xml.
+ Version 3.0 is recommended but causes errors -->
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+	      http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         version="2.5">
+
+    <display-name>Servlet 2.5 Web Application</display-name>
+
+    <servlet>
+        <servlet-name>Main</servlet-name>
+        <servlet-class>com.epc.servlets.Main</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>Login</servlet-name>
+        <servlet-class>com.epc.servlets.Login</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>MainController</servlet-name>
+        <servlet-class>com.epc.servlets.MainController</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>FormController</servlet-name>
+        <servlet-class>com.epc.servlets.FormController</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>Cars</servlet-name>
+        <servlet-class>com.epc.servlets.Cars</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Catalog</servlet-name>
+        <servlet-class>com.epc.servlets.Catalog</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Main</servlet-name>
+        <url-pattern>/admin/main.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>Login</servlet-name>
+        <url-pattern>/login.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>MainController</servlet-name>
+        <url-pattern>/admin/action.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>FormController</servlet-name>
+        <url-pattern>/admin/form.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>Cars</servlet-name>
+        <url-pattern>/cars.jsp</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Catalog</servlet-name>
+        <url-pattern>/catalog.jsp</url-pattern>
+    </servlet-mapping>
+
+    <filter>
+        <filter-name>AuthFilter</filter-name>
+        <filter-class>com.epc.filters.AuthFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>AuthFilter</filter-name>
+        <url-pattern>/admin/*</url-pattern>
+        <!--<dispatcher>REQUEST</dispatcher>-->
+    </filter-mapping>
+</web-app>
