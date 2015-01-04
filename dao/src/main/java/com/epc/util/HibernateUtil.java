@@ -3,9 +3,9 @@ package com.epc.util;
 import org.apache.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
-import org.hibernate.service.ServiceRegistry;
 
 
 /**
@@ -19,9 +19,11 @@ public class HibernateUtil {
 
     private static SessionFactory sessionFactory = null;
 
-    private static final ThreadLocal sessions = new ThreadLocal();
-    private ServiceRegistry serviceRegistry;
-
+    private static final ThreadLocal<Session> sessions = new ThreadLocal<>();
+    private StandardServiceRegistry serviceRegistry;
+    static {
+        getInstance();
+    }
     private HibernateUtil() {
         try {
             Configuration configuration = new Configuration();

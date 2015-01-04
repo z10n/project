@@ -27,5 +27,11 @@
         <module name="web" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="dao" target="1.7" />
+      <module name="project" target="1.7" />
+      <module name="service" target="1.7" />
+      <module name="web" target="1.7" />
+    </bytecodeTargetLevel>
   </component>
 </project>
