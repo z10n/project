@@ -1297,3 +1297,95 @@
 2015-01-05 02:05:20,820 INFO  - saveOrUpdate:Category{category_id=0, category_name='test_category_name'}
 2015-01-05 02:05:21,105 DEBUG - insert into categories (category_name) values (?)
 2015-01-05 02:05:21,177 INFO  - saveOrUpdate:Category{category_id=1, category_name='test_category_name'} done
+2015-01-06 11:38:34,243 DEBUG - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2015-01-06 11:38:34,836 INFO  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-01-06 11:38:34,873 INFO  - HHH000412: Hibernate Core {4.3.6.Final}
+2015-01-06 11:38:34,898 INFO  - HHH000206: hibernate.properties not found
+2015-01-06 11:38:34,910 INFO  - HHH000021: Bytecode provider name : javassist
+2015-01-06 11:38:35,041 INFO  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2015-01-06 11:38:35,047 INFO  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2015-01-06 11:38:35,409 INFO  - HHH000041: Configured SessionFactory: null
+2015-01-06 11:38:35,723 WARN  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-01-06 11:38:35,740 INFO  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost/testbase?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true]
+2015-01-06 11:38:35,742 INFO  - HHH000046: Connection properties: {user=root, password=****}
+2015-01-06 11:38:35,744 INFO  - HHH000006: Autocommit mode: false
+2015-01-06 11:38:35,749 INFO  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2015-01-06 11:38:37,084 INFO  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2015-01-06 11:38:38,613 INFO  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-01-06 11:38:38,677 INFO  - HHH000397: Using ASTQueryTranslatorFactory
+2015-01-06 11:38:40,828 INFO  - HHH000227: Running hbm2ddl schema export
+2015-01-06 11:38:40,833 DEBUG - alter table parts drop foreign key FK_prj76cl2k6fh6jvh7l4i3uj4u
+2015-01-06 11:38:41,153 DEBUG - alter table parts_cars drop foreign key FK_7u27vq2wjt7ty0aw7awjmdobw
+2015-01-06 11:38:41,374 DEBUG - alter table parts_cars drop foreign key FK_82xyjjq1d0cfj72xvjvjngsxr
+2015-01-06 11:38:41,631 DEBUG - drop table if exists cars
+2015-01-06 11:38:41,675 DEBUG - drop table if exists categories
+2015-01-06 11:38:41,720 DEBUG - drop table if exists part_details
+2015-01-06 11:38:41,777 DEBUG - drop table if exists parts
+2015-01-06 11:38:41,813 DEBUG - drop table if exists parts_cars
+2015-01-06 11:38:41,861 DEBUG - drop table if exists users
+2015-01-06 11:38:41,902 DEBUG - create table cars (car_id integer not null auto_increment, car_name varchar(255), primary key (car_id)) ENGINE=InnoDB
+2015-01-06 11:38:41,978 DEBUG - create table categories (category_id integer not null auto_increment, category_name varchar(255), primary key (category_id)) ENGINE=InnoDB
+2015-01-06 11:38:42,047 DEBUG - create table part_details (part_id bigint not null auto_increment, part_name varchar(255), primary key (part_id)) ENGINE=InnoDB
+2015-01-06 11:38:42,116 DEBUG - create table parts (part_id integer not null auto_increment, category_id integer, primary key (part_id)) ENGINE=InnoDB
+2015-01-06 11:38:42,192 DEBUG - create table parts_cars (car_id integer not null, part_id integer not null) ENGINE=InnoDB
+2015-01-06 11:38:42,270 DEBUG - create table users (user_id integer not null auto_increment, user_name varchar(255), user_pass varchar(255), primary key (user_id)) ENGINE=InnoDB
+2015-01-06 11:38:42,360 DEBUG - alter table parts add constraint FK_prj76cl2k6fh6jvh7l4i3uj4u foreign key (category_id) references categories (category_id)
+2015-01-06 11:38:42,573 DEBUG - alter table parts_cars add constraint FK_7u27vq2wjt7ty0aw7awjmdobw foreign key (part_id) references parts (part_id)
+2015-01-06 11:38:42,795 DEBUG - alter table parts_cars add constraint FK_82xyjjq1d0cfj72xvjvjngsxr foreign key (car_id) references cars (car_id)
+2015-01-06 11:38:43,018 INFO  - HHH000230: Schema export complete
+2015-01-06 11:38:43,214 INFO  - saveOrUpdate:Category{category_id=0, category_name='test_category_name'}
+2015-01-06 11:38:43,458 DEBUG - insert into categories (category_name) values (?)
+2015-01-06 11:38:43,513 INFO  - saveOrUpdate:Category{category_id=1, category_name='test_category_name'} done
+2015-01-06 11:38:43,586 INFO  - saveOrUpdate:Part{part_id=0}
+2015-01-06 11:38:43,588 DEBUG - insert into parts (category_id) values (?)
+2015-01-06 11:38:43,595 DEBUG - insert into part_details (part_name) values (?)
+2015-01-06 11:38:43,603 INFO  - saveOrUpdate:Part{part_id=1} done
+2015-01-06 11:38:43,695 INFO  - saveOrUpdate:Category{category_id=0, category_name='test test test'}
+2015-01-06 11:38:43,696 DEBUG - insert into categories (category_name) values (?)
+2015-01-06 11:38:43,700 INFO  - saveOrUpdate:Category{category_id=2, category_name='test test test'} done
+2015-01-06 11:40:09,972 DEBUG - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2015-01-06 11:40:10,337 INFO  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-01-06 11:40:10,362 INFO  - HHH000412: Hibernate Core {4.3.6.Final}
+2015-01-06 11:40:10,371 INFO  - HHH000206: hibernate.properties not found
+2015-01-06 11:40:10,384 INFO  - HHH000021: Bytecode provider name : javassist
+2015-01-06 11:40:10,446 INFO  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2015-01-06 11:40:10,448 INFO  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2015-01-06 11:40:10,673 INFO  - HHH000041: Configured SessionFactory: null
+2015-01-06 11:40:10,924 WARN  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-01-06 11:40:10,938 INFO  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost/testbase?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true]
+2015-01-06 11:40:10,940 INFO  - HHH000046: Connection properties: {user=root, password=****}
+2015-01-06 11:40:10,941 INFO  - HHH000006: Autocommit mode: false
+2015-01-06 11:40:10,944 INFO  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2015-01-06 11:40:11,787 INFO  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2015-01-06 11:40:12,308 INFO  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-01-06 11:40:12,322 INFO  - HHH000397: Using ASTQueryTranslatorFactory
+2015-01-06 11:40:13,211 INFO  - HHH000227: Running hbm2ddl schema export
+2015-01-06 11:40:13,219 DEBUG - alter table parts drop foreign key FK_prj76cl2k6fh6jvh7l4i3uj4u
+2015-01-06 11:40:13,492 DEBUG - alter table parts_cars drop foreign key FK_7u27vq2wjt7ty0aw7awjmdobw
+2015-01-06 11:40:13,718 DEBUG - alter table parts_cars drop foreign key FK_82xyjjq1d0cfj72xvjvjngsxr
+2015-01-06 11:40:13,941 DEBUG - drop table if exists cars
+2015-01-06 11:40:13,985 DEBUG - drop table if exists categories
+2015-01-06 11:40:14,031 DEBUG - drop table if exists part_details
+2015-01-06 11:40:14,075 DEBUG - drop table if exists parts
+2015-01-06 11:40:14,121 DEBUG - drop table if exists parts_cars
+2015-01-06 11:40:14,164 DEBUG - drop table if exists users
+2015-01-06 11:40:14,211 DEBUG - create table cars (car_id integer not null auto_increment, car_name varchar(255), primary key (car_id)) ENGINE=InnoDB
+2015-01-06 11:40:14,310 DEBUG - create table categories (category_id integer not null auto_increment, category_name varchar(255), primary key (category_id)) ENGINE=InnoDB
+2015-01-06 11:40:14,410 DEBUG - create table part_details (part_id bigint not null auto_increment, part_name varchar(255), primary key (part_id)) ENGINE=InnoDB
+2015-01-06 11:40:14,501 DEBUG - create table parts (part_id integer not null auto_increment, category_id integer, primary key (part_id)) ENGINE=InnoDB
+2015-01-06 11:40:14,589 DEBUG - create table parts_cars (car_id integer not null, part_id integer not null) ENGINE=InnoDB
+2015-01-06 11:40:14,678 DEBUG - create table users (user_id integer not null auto_increment, user_name varchar(255), user_pass varchar(255), primary key (user_id)) ENGINE=InnoDB
+2015-01-06 11:40:14,767 DEBUG - alter table parts add constraint FK_prj76cl2k6fh6jvh7l4i3uj4u foreign key (category_id) references categories (category_id)
+2015-01-06 11:40:14,946 DEBUG - alter table parts_cars add constraint FK_7u27vq2wjt7ty0aw7awjmdobw foreign key (part_id) references parts (part_id)
+2015-01-06 11:40:15,125 DEBUG - alter table parts_cars add constraint FK_82xyjjq1d0cfj72xvjvjngsxr foreign key (car_id) references cars (car_id)
+2015-01-06 11:40:15,304 INFO  - HHH000230: Schema export complete
+2015-01-06 11:40:15,475 INFO  - saveOrUpdate:Category{category_id=0, category_name='test_category_name'}
+2015-01-06 11:40:15,667 DEBUG - insert into categories (category_name) values (?)
+2015-01-06 11:40:15,709 INFO  - saveOrUpdate:Category{category_id=1, category_name='test_category_name'} done
+2015-01-06 11:40:15,782 INFO  - saveOrUpdate:Part{part_id=0}
+2015-01-06 11:40:15,784 DEBUG - insert into parts (category_id) values (?)
+2015-01-06 11:40:15,793 DEBUG - insert into part_details (part_name) values (?)
+2015-01-06 11:40:15,801 INFO  - saveOrUpdate:Part{part_id=1} done
+2015-01-06 11:40:15,853 INFO  - saveOrUpdate:Category{category_id=0, category_name='test test test'}
+2015-01-06 11:40:15,854 DEBUG - insert into categories (category_name) values (?)
+2015-01-06 11:40:15,867 INFO  - saveOrUpdate:Category{category_id=2, category_name='test test test'} done
